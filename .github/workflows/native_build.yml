@@ -1,0 +1,28 @@
+name: GraalVM Native Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up GraalVM
+        uses: graalvm/setup-graalvm@v1.2.2
+        with:
+          java-version: '22'
+          distribution: 'graalvm'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: GraalVM build
+        run: |
+          echo "GRAALVM_HOME: $GRAALVM_HOME"
+          echo "JAVA_HOME: $JAVA_HOME"
+          java -version
+          native-image --version
+          mvn -Pnative package
