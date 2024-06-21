@@ -25,4 +25,4 @@ jobs:
           echo "JAVA_HOME: $JAVA_HOME"
           java -version
           native-image --version
-          mvn -Pnative package
+          mvn -Pnative package -Dnative-image.args="--initialize-at-build-time=java.beans.Introspector$1"
