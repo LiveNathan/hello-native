@@ -201,12 +201,6 @@
                                     <outputDirectory>/META-INF/native-image</outputDirectory>
                                 </metadataCopy>
                             </agent>
-<!--                            <buildArgs>-->
-<!--                                <buildArg>-H:+UnlockExperimentalVMOptions</buildArg>-->
-<!--                                <buildArg>-H:ResourceConfigurationResources</buildArg>-->
-<!--                            </buildArgs>-->
-                            <skipNativeTests>true</skipNativeTests>
-                            <debug>true</debug>
                         </configuration>
                     </plugin>
                 </plugins>
